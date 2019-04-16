@@ -16,11 +16,15 @@ h3, .rules {
 }
 
 .container  {
-    text-align: center;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
   }
 
 .box {
-    display:inline-block;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
     height: 300px;
     width: 300px;
     border: 5px solid black;
@@ -34,6 +38,7 @@ h3, .rules {
         /* margin-top: 10%; */
         background: green;
         border: 2px solid black;
+        margin-bottom:0%;
     }
 
     .box .two {
@@ -44,6 +49,7 @@ h3, .rules {
         margin-top: 0%;
         background: green;
         border: 2px solid black;
+        margin-bottom:0%;
     }
 
     .box .three {
@@ -54,6 +60,7 @@ h3, .rules {
         margin-top: 0%;
         background: green;
         border: 2px solid black;
+        margin-bottom:0%;
     }
 
     .box .four {
@@ -64,6 +71,7 @@ h3, .rules {
         margin-top: 0%;
         background: green;
         border: 2px solid black;
+        margin-bottom:0%;
     }
 
     .box .five {
@@ -75,6 +83,9 @@ h3, .rules {
         background: green;
         border: 2px solid black;
         box-align: baseline;
+        margin-bottom:0%;
     }
+
+ 
 
     /* move blocks to bottom of div */
