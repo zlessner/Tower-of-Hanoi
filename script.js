@@ -12,9 +12,21 @@ let tower4=document.querySelector('.four')
 
 let tower5=document.querySelector('.five')
 
+let tower21=document.querySelector('.two-one')
+
+let tower22=document.querySelector('.two-two')
+
+let tower23=document.querySelector(".two-three")
+
+let tower24=document.querySelector('.two-four')
+
+let tower25=document.querySelector('.two-five')
+
 let blockTower=document.querySelectorAll('.block')
 
 let box1=document.querySelector('.box1')
+
+let box2=document.querySelector('.box2')
 
 let body=document.querySelector('body')
 
@@ -33,8 +45,14 @@ if (blockTower[i]==boxArray[0]) {
 if (blockTower[i].contains(evt.target))  {
 
 blockTower[i].style.border = "5px solid yellow";
- }
 
+box2.addEventListener("click", selectBox2);
+function selectBox2(evt) {
+  evt.preventDefault();
+    tower25.appendChild(blockTower[i])
+
+ }
+}
 else {
     blockTower[i].style.border = "2px solid black";
 }
