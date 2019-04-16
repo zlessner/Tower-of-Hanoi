@@ -66,8 +66,7 @@ box1.addEventListener("click", selectBox1);
 function selectBox1(evt) {
   evt.preventDefault();
     box1.prepend(blockTower[i])
-    counter.innerHTML=''
-    counter.innerHTML +=1
+    counter.innerHTML ++
     box1.removeEventListener('click', selectBox1);
     box2.removeEventListener('click', selectBox2);
     box3.removeEventListener('click', selectBox3);
@@ -79,8 +78,7 @@ function selectBox2(evt) {
     box2.prepend(blockTower[i])
     //boxArray.shift()
     boxArray2.unshift(blockTower[i])
-    counter.innerHTML=''
-    counter.innerHTML +=1
+    counter.innerHTML ++
     console.log(boxArray)
     console.log(boxArray2)
     box1.removeEventListener('click', selectBox1);
@@ -93,8 +91,7 @@ function selectBox2(evt) {
    evt.preventDefault();
      box3.prepend(blockTower[i])
      boxArray3.unshift(blockTower[i])
-     counter.innerHTML=''
-     counter.innerHTML +=1
+     counter.innerHTML ++
      console.log(boxArray3)
      box1.removeEventListener('click', selectBox1);
      box2.removeEventListener('click', selectBox2);
