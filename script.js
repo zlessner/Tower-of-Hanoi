@@ -2,6 +2,8 @@
 
 //create three different arrays with winning array having correct order and pieces
 
+let counter=document.querySelector('.counter')
+
 let tower1=document.querySelector('.one')
 
 let tower2=document.querySelector('.two')
@@ -64,6 +66,8 @@ box1.addEventListener("click", selectBox1);
 function selectBox1(evt) {
   evt.preventDefault();
     box1.prepend(blockTower[i])
+    counter.innerHTML=''
+    counter.innerHTML +=1
 
 
  }
@@ -74,6 +78,8 @@ function selectBox2(evt) {
     box2.prepend(blockTower[i])
     //boxArray.shift()
     boxArray2.unshift(blockTower[i])
+    counter.innerHTML=''
+    counter.innerHTML +=1
     console.log(boxArray)
     console.log(boxArray2)
 
@@ -84,6 +90,8 @@ function selectBox2(evt) {
    evt.preventDefault();
      box3.prepend(blockTower[i])
      boxArray3.unshift(blockTower[i])
+     counter.innerHTML=''
+     counter.innerHTML +=1
      console.log(boxArray3)
 }
 }
