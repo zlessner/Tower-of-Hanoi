@@ -17,23 +17,21 @@ h3, .rules {
 
 .container  {
     text-align: center;
-    position: relative;
   }
 
 .box {
-    position:relative;
     display:inline-block;
     height: 300px;
     width: 300px;
     border: 5px solid black;
   }
 
-/* .box .one {
+.box .one {
         position: relative;
         width: 25%;
         height: 11%;
         margin: auto;
-        margin-top: 10%;
+        /* margin-top: 10%; */
         background: green;
         border: 2px solid black;
     }
@@ -56,27 +54,27 @@ h3, .rules {
         margin-top: 0%;
         background: green;
         border: 2px solid black;
-    } */
+    }
 
     .box .four {
         position: relative;
         width: 55%;
         height: 14%;
         margin: auto;
-        /* margin-top: 0%; */
+        margin-top: 0%;
         background: green;
         border: 2px solid black;
-    } 
+    }
 
     .box .five {
-        position: absolute;
+        position: relative;
         width: 65%;
         height: 15%;
         margin: auto;
-        /* margin-top: 0%; */
+        margin-top: 0%;
         background: green;
         border: 2px solid black;
-        bottom:0;
-        left: 0;
-        right: 0;
+        box-align: baseline;
     }
+
+    /* move blocks to bottom of div */
