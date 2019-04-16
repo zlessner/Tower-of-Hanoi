@@ -44,13 +44,15 @@ let body=document.querySelector('body')
 
 let boxArray=[tower1,tower2,tower3,tower4,tower5]
 
-console.log(boxArray)
+let boxArray2=[]
+
+let boxArray3=[]
 
 
-for (let i=0; i<blockTower.length;i++) {
 
 body.addEventListener("click", selectTower);
 function selectTower(evt) {
+    for (let i=0; i<blockTower.length;i++) {
   evt.preventDefault();
 
 if (blockTower[i]==boxArray[0]) {
@@ -63,24 +65,27 @@ function selectBox1(evt) {
   evt.preventDefault();
     box1.appendChild(blockTower[i])
 
- }
 
+ }
 
 box2.addEventListener("click", selectBox2);
 function selectBox2(evt) {
   evt.preventDefault();
     box2.appendChild(blockTower[i])
+    //boxArray.shift()
+    boxArray2.unshift(blockTower[i])
+    console.log(boxArray)
+    console.log(boxArray2)
 
  }
-
 
  box3.addEventListener("click", selectBox3);
  function selectBox3(evt) {
    evt.preventDefault();
      box3.appendChild(blockTower[i])
- 
-  }
-
+     boxArray3.unshift(blockTower[i])
+     console.log(boxArray3)
+}
 }
 else {
     blockTower[i].style.border = "2px solid black";

@@ -86,6 +86,10 @@ h3, .rules {
         margin-bottom:0%;
     }
 
+    .yellowBoarder {
+        border: 5px solid yellow
+    }
+
  
 
     /* move blocks to bottom of div */
