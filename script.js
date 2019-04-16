@@ -63,7 +63,7 @@ blockTower[i].style.border = "5px solid yellow";
 box1.addEventListener("click", selectBox1);
 function selectBox1(evt) {
   evt.preventDefault();
-    box1.appendChild(blockTower[i])
+    box1.prepend(blockTower[i])
 
 
  }
@@ -71,7 +71,7 @@ function selectBox1(evt) {
 box2.addEventListener("click", selectBox2);
 function selectBox2(evt) {
   evt.preventDefault();
-    box2.appendChild(blockTower[i])
+    box2.prepend(blockTower[i])
     //boxArray.shift()
     boxArray2.unshift(blockTower[i])
     console.log(boxArray)
@@ -82,7 +82,7 @@ function selectBox2(evt) {
  box3.addEventListener("click", selectBox3);
  function selectBox3(evt) {
    evt.preventDefault();
-     box3.appendChild(blockTower[i])
+     box3.prepend(blockTower[i])
      boxArray3.unshift(blockTower[i])
      console.log(boxArray3)
 }
