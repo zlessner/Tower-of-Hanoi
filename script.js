@@ -51,7 +51,6 @@ let boxArray2=[]
 let boxArray3=[]
 
 
-
 body.addEventListener("click", selectTower);
 function selectTower(evt) {
     for (let i=0; i<blockTower.length;i++) {
@@ -62,14 +61,16 @@ if (blockTower[i].contains(evt.target))  {
 
 blockTower[i].style.border = "5px solid yellow";
 
+
 box1.addEventListener("click", selectBox1);
 function selectBox1(evt) {
   evt.preventDefault();
     box1.prepend(blockTower[i])
     counter.innerHTML=''
     counter.innerHTML +=1
-
-
+    box1.removeEventListener('click', selectBox1);
+    box2.removeEventListener('click', selectBox2);
+    box3.removeEventListener('click', selectBox3);
  }
 
 box2.addEventListener("click", selectBox2);
@@ -82,7 +83,9 @@ function selectBox2(evt) {
     counter.innerHTML +=1
     console.log(boxArray)
     console.log(boxArray2)
-
+    box1.removeEventListener('click', selectBox1);
+    box2.removeEventListener('click', selectBox2);
+    box3.removeEventListener('click', selectBox3);
  }
 
  box3.addEventListener("click", selectBox3);
@@ -93,8 +96,12 @@ function selectBox2(evt) {
      counter.innerHTML=''
      counter.innerHTML +=1
      console.log(boxArray3)
+     box1.removeEventListener('click', selectBox1);
+     box2.removeEventListener('click', selectBox2);
+     box3.removeEventListener('click', selectBox3);
 }
 }
+
 else {
     blockTower[i].style.border = "2px solid black";
 }
