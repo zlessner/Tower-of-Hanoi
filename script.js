@@ -48,8 +48,10 @@ let childrenBox1=Array.from(box1.children)
 
 let childrenBox2=Array.from(box2.children)
 
-let childrenBox3=Array.from(box2.children)
+let childrenBox3=Array.from(box3.children)
 
+console.log(childrenBox1)
+console.log(childrenBox2)
 console.log(childrenBox3)
 
 
@@ -70,7 +72,6 @@ function selectTower(evt) {
         // selected = false
 
 
-        //if (blockTower[i] == box1.firstElementChild) {
             if (blockTower[i].contains(evt.target)) {
 
                 blockTower[i].style.border = "5px solid yellow";
@@ -79,72 +80,56 @@ function selectTower(evt) {
                 box1.addEventListener("click", selectBox1);
                 function selectBox1(evt) {
                     evt.preventDefault();
-                    console.log(evt.target)
-                    console.log(evt.currentTarget)
-                    box1.prepend(blockTower[i])
-                    if (!childrenBox1.includes(blockTower[i])) {
-                        childrenBox1.unshift(blockTower[i])
+                    let woof1=Array.from(box1.children)
+                    if (!woof1.includes(blockTower[i])) {
+                        woof1.unshift(blockTower[i])
                         counter.innerHTML++
                     }
-                    // if (blockTower[i]!=boxArray[i]) {
 
-                    //}
+                    box1.prepend(blockTower[i])
+
                     box1.removeEventListener('click', selectBox1);
                     box2.removeEventListener('click', selectBox2);
                     box3.removeEventListener('click', selectBox3);
-                    // boxArray2.splice(boxArray2.indexOf(blockTower[i]), 1 );
-                    // boxArray3.splice(boxArray3.indexOf(blockTower[i]), 1 );
-                    console.log(box1)
+
                 }
 
                 box2.addEventListener("click", selectBox2);
                 function selectBox2(evt) {
                     evt.preventDefault();
-                    box2.prepend(blockTower[i])
-                    if (!childrenBox2.includes(blockTower[i])) {
-                        childrenBox2.unshift(blockTower[i])
+                    
+                    let woof2=Array.from(box2.children)
+                     if (!woof2.includes(blockTower[i])) {
+                        woof2.unshift(blockTower[i])
                         counter.innerHTML++
                     }
-                    //if (blockTower[i]!=boxArray2[i]) {
+                    box2.prepend(blockTower[i])
 
-                    //}
-                    //boxArray.splice(boxArray.indexOf(blockTower[i]), 1 );
-                    //boxArray3.splice(boxArray3.indexOf(blockTower[i]), 1 );
                     box1.removeEventListener('click', selectBox1);
                     box2.removeEventListener('click', selectBox2);
                     box3.removeEventListener('click', selectBox3);
-                    //boxArray.shift()
-                    console.log(box1)
-                    console.log(box2)
                 }
 
                 box3.addEventListener("click", selectBox3);
                 function selectBox3(evt) {
                     evt.preventDefault();
-                    box3.prepend(blockTower[i])
-                    if (!childrenBox3.includes(blockTower[i])) {
-                        childrenBox3.unshift(blockTower[i])
+                    
+                    let woof3=Array.from(box3.children)
+                    if (!woof3.includes(blockTower[i])) {
+                        woof3.unshift(blockTower[i])
                         counter.innerHTML++
                     }
-                    // if (blockTower[i]!=boxArray3[i]) {
-
-                    //}
+                    box3.prepend(blockTower[i])
 
                     box1.removeEventListener('click', selectBox1);
                     box2.removeEventListener('click', selectBox2);
                     box3.removeEventListener('click', selectBox3);
-                    // boxArray.splice(boxArray.indexOf(blockTower[i]), 1 );
-                    //boxArray2.splice(boxArray2.indexOf(blockTower[i]), 1 );
-                    console.log(box1)
-                    console.log(box3)
                 }
             }
 
             else {
                 blockTower[i].style.border = "2px solid black";
             }
-
-        //}
     }
 }
 
