@@ -67,15 +67,16 @@ function selectBox1(evt) {
   evt.preventDefault();
     box1.prepend(blockTower[i])
     if (!boxArray.includes(blockTower[i])) {
-    boxArray.push(blockTower[i]) }
+    boxArray.unshift(blockTower[i])
+    counter.innerHTML ++  }
    // if (blockTower[i]!=boxArray[i]) {
-    counter.innerHTML ++ 
+    
 //}
     box1.removeEventListener('click', selectBox1);
     box2.removeEventListener('click', selectBox2);
     box3.removeEventListener('click', selectBox3);
-    //boxArray2.splice(boxArray2.indexOf(blockTower[i]), 1 );
-    //boxArray3.splice(boxArray3.indexOf(blockTower[i]), 1 );
+    boxArray2.splice(boxArray2.indexOf(blockTower[i]), 1 );
+    boxArray3.splice(boxArray3.indexOf(blockTower[i]), 1 );
     console.log(boxArray)
  }
 
@@ -84,12 +85,13 @@ function selectBox2(evt) {
   evt.preventDefault();
     box2.prepend(blockTower[i])
     if (!boxArray2.includes(blockTower[i])) {
-    boxArray2.push(blockTower[i]) }
+    boxArray2.unshift(blockTower[i]) 
+    counter.innerHTML ++ }
     //if (blockTower[i]!=boxArray2[i]) {
-    counter.innerHTML ++ 
+  
 //}
-    //boxArray.splice(boxArray.indexOf(blockTower[i]), 1 );
-    //boxArray3.splice(boxArray3.indexOf(blockTower[i]), 1 );
+    boxArray.splice(boxArray.indexOf(blockTower[i]), 1 );
+    boxArray3.splice(boxArray3.indexOf(blockTower[i]), 1 );
     box1.removeEventListener('click', selectBox1);
     box2.removeEventListener('click', selectBox2);
     box3.removeEventListener('click', selectBox3);
@@ -103,16 +105,19 @@ function selectBox2(evt) {
    evt.preventDefault();
      box3.prepend(blockTower[i])
      if (!boxArray3.includes(blockTower[i])) {
-     boxArray3.push(blockTower[i]) }
+     boxArray3.unshift(blockTower[i])
+     counter.innerHTML ++  }
     // if (blockTower[i]!=boxArray3[i]) {
-     counter.innerHTML ++ 
+     
     //}
-     console.log(boxArray3)
+     
      box1.removeEventListener('click', selectBox1);
      box2.removeEventListener('click', selectBox2);
      box3.removeEventListener('click', selectBox3);
-     //boxArray.splice(boxArray.indexOf(blockTower[i]), 1 );
-     //boxArray2.splice(boxArray2.indexOf(blockTower[i]), 1 );
+     boxArray.splice(boxArray.indexOf(blockTower[i]), 1 );
+     boxArray2.splice(boxArray2.indexOf(blockTower[i]), 1 );
+     console.log(boxArray)
+     console.log(boxArray3)
 }
 }
 
