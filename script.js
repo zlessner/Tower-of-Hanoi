@@ -16,25 +16,15 @@ let tower4 = document.querySelector('.four')
 
 let tower5 = document.querySelector('.five')
 
-let tower21 = document.querySelector('.two-one')
+let tower1Wid= document.querySelector('.one').offsetWidth
 
-let tower22 = document.querySelector('.two-two')
+let tower2Wid= document.querySelector('.two').offsetWidth
 
-let tower23 = document.querySelector(".two-three")
+let tower3Wid= document.querySelector('.three').offsetWidth
 
-let tower24 = document.querySelector('.two-four')
+let tower4Wid= document.querySelector('.four').offsetWidth
 
-let tower25 = document.querySelector('.two-five')
-
-let tower31 = document.querySelector('.three-one')
-
-let tower32 = document.querySelector('.three-two')
-
-let tower33 = document.querySelector(".three-three")
-
-let tower34 = document.querySelector('.three-four')
-
-let tower35 = document.querySelector('.three-five')
+let tower5Wid= document.querySelector('.five').offsetWidth
 
 let blockTower = document.querySelectorAll('.block')
 
@@ -78,8 +68,11 @@ function selectTower(evt) {
                         woof1.unshift(blockTower[i])
                         counter.innerHTML++
                     }
+
+                    if((woof1.length<=1) || (woof1[0].offsetWidth<=woof1[1].offsetWidth)) {
                     box1.prepend(blockTower[i])
-                    
+                    }
+
                     box1.removeEventListener('click', selectBox1);
                     box2.removeEventListener('click', selectBox2);
                     box3.removeEventListener('click', selectBox3);
@@ -95,8 +88,20 @@ function selectTower(evt) {
                         woof2.unshift(blockTower[i])
                         counter.innerHTML++
                     }
-
+                  
+                    
+                    if((woof2.length<=1) || (woof2[0].offsetWidth<=woof2[1].offsetWidth)) {
                     box2.prepend(blockTower[i])
+                    }
+
+                    //console.log(woof2[i-1].offsetWidth)
+                    //console.log(woof2[0].offsetWidth)
+                    //console.log(woof2[1].offsetWidth)
+                    //console.log(blockTower[i].offsetWidth)
+                    //console.log(blockTower[0].offsetWidth)
+                    //console.log(blockTower[i+1].offsetWidth)
+                    //console.log(woof2[0].offsetWidth)
+                  
 
                     box1.removeEventListener('click', selectBox1);
                     box2.removeEventListener('click', selectBox2);
@@ -112,8 +117,9 @@ function selectTower(evt) {
                         woof3.unshift(blockTower[i])
                         counter.innerHTML++
                     }
-
+                    if((woof3.length<=1) || (woof3[0].offsetWidth<=woof3[1].offsetWidth)) {
                     box3.prepend(blockTower[i])
+                    }
 
                     box1.removeEventListener('click', selectBox1);
                     box2.removeEventListener('click', selectBox2);
