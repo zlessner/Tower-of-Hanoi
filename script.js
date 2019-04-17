@@ -68,7 +68,7 @@ function selectTower(evt) {
 
                
 
-                //if ((blockTower[i]==box1.firstElementChild) || (blockTower[i]==box1.firstElementChild) || (blockTower[i]==box1.firstElementChild)) {
+                if ((blockTower[i]==box1.firstElementChild) || (blockTower[i]==box2.firstElementChild) || (blockTower[i]==box3.firstElementChild)) {
 
                 blockTower[i].style.border = "5px solid yellow";
 
@@ -122,11 +122,12 @@ function selectTower(evt) {
                     box3.removeEventListener('click', selectBox3);
                 }
             }
+        }
 
             else {
                 blockTower[i].style.border = "2px solid black";
             }
-    }
-//}
+    
+}
 }
 
