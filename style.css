@@ -1,7 +1,5 @@
 /* scalability to smaller screen */
 
-
-
 body {
     text-align:center;
     background-color:lightblue;
@@ -36,10 +34,10 @@ h3, .rules {
         width: 25%;
         height: 11%;
         margin: auto;
-        /* margin-top: 10%; */
+        margin-top:0;
         background: green;
         border: 2px solid black;
-        margin-bottom:0%;
+        margin-bottom:0;
     }
 
     .box .two {
@@ -50,7 +48,7 @@ h3, .rules {
         margin-top: 0%;
         background: green;
         border: 2px solid black;
-        margin-bottom:0%;
+        margin-bottom:0;
     }
 
     .box .three {
@@ -61,7 +59,7 @@ h3, .rules {
         margin-top: 0%;
         background: green;
         border: 2px solid black;
-        margin-bottom:0%;
+        margin-bottom:0;
     }
 
     .box .four {
@@ -72,7 +70,7 @@ h3, .rules {
         margin-top: 0%;
         background: green;
         border: 2px solid black;
-        margin-bottom:0%;
+        margin-bottom:0;
     }
 
     .box .five {
@@ -84,12 +82,13 @@ h3, .rules {
         background: green;
         border: 2px solid black;
         box-align: baseline;
-        margin-bottom:0%;
+        margin-bottom:0;
     }
 
     .yellowBoarder {
         border: 5px solid yellow
     }
+
 
  
 

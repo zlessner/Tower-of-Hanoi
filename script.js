@@ -53,10 +53,9 @@ let childrenBox2=Array.from(box2.children)
 let childrenBox3=Array.from(box3.children)
 
 console.log(childrenBox1)
-console.log(childrenBox2)
-console.log(childrenBox3)
 
 console.log(box1.firstElementChild)
+
 
 body.addEventListener("click", selectTower);
 function selectTower(evt) {
@@ -65,8 +64,6 @@ function selectTower(evt) {
 
 
             if (blockTower[i].contains(evt.target)) {
-
-               
 
                 if ((blockTower[i]==box1.firstElementChild) || (blockTower[i]==box2.firstElementChild) || (blockTower[i]==box3.firstElementChild)) {
 
@@ -81,9 +78,8 @@ function selectTower(evt) {
                         woof1.unshift(blockTower[i])
                         counter.innerHTML++
                     }
-
                     box1.prepend(blockTower[i])
-
+                    
                     box1.removeEventListener('click', selectBox1);
                     box2.removeEventListener('click', selectBox2);
                     box3.removeEventListener('click', selectBox3);
@@ -99,6 +95,7 @@ function selectTower(evt) {
                         woof2.unshift(blockTower[i])
                         counter.innerHTML++
                     }
+
                     box2.prepend(blockTower[i])
 
                     box1.removeEventListener('click', selectBox1);
@@ -115,6 +112,7 @@ function selectTower(evt) {
                         woof3.unshift(blockTower[i])
                         counter.innerHTML++
                     }
+
                     box3.prepend(blockTower[i])
 
                     box1.removeEventListener('click', selectBox1);
