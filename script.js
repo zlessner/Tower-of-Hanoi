@@ -2,6 +2,8 @@
 
 //create three different arrays with winning array having correct order and pieces
 
+//reset button
+
 let counter = document.querySelector('.counter')
 
 let tower1 = document.querySelector('.one')
@@ -54,25 +56,19 @@ console.log(childrenBox1)
 console.log(childrenBox2)
 console.log(childrenBox3)
 
-
-// global variable selected
-let selected = false
+console.log(box1.firstElementChild)
 
 body.addEventListener("click", selectTower);
 function selectTower(evt) {
     for (let i = 0; i < blockTower.length; i++) {
         evt.preventDefault();
 
-        // if false then
-        // selected = true
-        // highlight the disc
-        // if true
-        // do the move
-        // unhighlight
-        // selected = false
-
 
             if (blockTower[i].contains(evt.target)) {
+
+               
+
+                //if ((blockTower[i]==box1.firstElementChild) || (blockTower[i]==box1.firstElementChild) || (blockTower[i]==box1.firstElementChild)) {
 
                 blockTower[i].style.border = "5px solid yellow";
 
@@ -131,5 +127,6 @@ function selectTower(evt) {
                 blockTower[i].style.border = "2px solid black";
             }
     }
+//}
 }
 
