@@ -96,20 +96,28 @@ let blockTower =document.querySelectorAll('.block')
         //refresh and then run function
     easyMode.addEventListener("click", removeBlock);
     
-    //document.onload = 
     function removeBlock(evt) {
         evt.preventDefault();
 
         //window.location.reload(false);
 
-        box1.removeChild(box1.lastChild);
-        let newChildrenBox=Array.from(box1.children)
+        node1.remove()
+        node2.remove()
+        node3.remove()
+        node4.remove()
+        node5.remove()
+
+        box1.appendChild(node1)
+        box1.appendChild(node2)
+        box1.appendChild(node3)
+        box1.appendChild(node4)
+
         newBlockTower = document.querySelectorAll('.block')
+
         //blockTower.pop();
         //console.log(blockTower)
         //console.log(blockTower.length)
-        console.log(newBlockTower)
-        if(newBlockTower.length<blockTower.length){this.disabled = true}
+
     }
     
 
