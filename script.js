@@ -52,11 +52,11 @@ let blockArray=[node1,node2,node3,node4,node5]
         function restartButton(evt) {
             evt.preventDefault();
             counter.innerHTML=reset
-            node1.remove()
-            node2.remove()
-            node3.remove()
-            node4.remove()
-            node5.remove()
+            
+            for(let i=0; i<blockArray.length; i++) {
+
+                blockArray[i].remove()
+            }
     
             box1.appendChild(node1)
             box1.appendChild(node2)
@@ -71,11 +71,10 @@ let blockArray=[node1,node2,node3,node4,node5]
         evt.preventDefault();
         counter.innerHTML=reset
 
-        node1.remove()
-        node2.remove()
-        node3.remove()
-        node4.remove()
-        node5.remove()
+        for(let i=0; i<blockArray.length; i++) {
+
+            blockArray[i].remove()
+        }
 
         box1.appendChild(node1)
         box1.appendChild(node2)
