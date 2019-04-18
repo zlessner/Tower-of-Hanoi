@@ -14,6 +14,8 @@ let totalWin = localStorage.getItem('winCounter');
 
 let restart = document.querySelector('.restart')
 
+let easyMode = document.querySelector('.easyMode')
+
 let blockTower = document.querySelectorAll('.block')
 
 let box1 = document.querySelector('.box1')
@@ -24,12 +26,23 @@ let box3 = document.querySelector('.box3')
 
 let body = document.querySelector('body')
 
+
 restart.addEventListener("click", restartButton);
 function restartButton(evt) {
 
     evt.preventDefault();
     window.location.reload(false);
     }
+
+
+    easyMode.addEventListener("click", removeBlock);
+    function removeBlock(evt) {
+    
+        evt.preventDefault();
+
+        box1.removeChild(box1.lastChild);
+        }
+
 
 
 body.addEventListener("click", selectTower);
@@ -48,12 +61,16 @@ function selectTower(evt) {
                     evt.preventDefault();
                     let woof1=Array.from(box1.children)
                     if (!woof1.includes(blockTower[i])) {
+
+                        if((evt.target== evt.currentTarget) && (!woof1.includes(blockTower[i-1])))  { 
+                            counter.innerHTML++ 
+                        }
+
                         woof1.unshift(blockTower[i])
                         
                     }
 
                     if((woof1.length<=1) || (woof1[0].offsetWidth<=woof1[1].offsetWidth)) {
-                        counter.innerHTML++
                         box1.prepend(blockTower[i])
                     }
 
@@ -69,11 +86,16 @@ function selectTower(evt) {
                     
                     let woof2=Array.from(box2.children)
                      if (!woof2.includes(blockTower[i])) {
+
+                        if((evt.target== evt.currentTarget) && (!woof2.includes(blockTower[i-1])))  { 
+                        counter.innerHTML++ 
+                        } 
+
                         woof2.unshift(blockTower[i]) 
                     }
                   
                     if((woof2.length<=1) || (woof2[0].offsetWidth<=woof2[1].offsetWidth)) {
-                        counter.innerHTML++
+                       
                         box2.prepend(blockTower[i])
                     }
 
@@ -88,11 +110,15 @@ function selectTower(evt) {
                     
                     let woof3=Array.from(box3.children)
                     if (!woof3.includes(blockTower[i])) {
+
+                        if((evt.target== evt.currentTarget) && (!woof3.includes(blockTower[i-1])))  { 
+                        counter.innerHTML++ }
+                            
+
                         woof3.unshift(blockTower[i])  
                     }
 
                     if((woof3.length<=1) || (woof3[0].offsetWidth<=woof3[1].offsetWidth)) {
-                        counter.innerHTML++
                         box3.prepend(blockTower[i])
                     }
 
@@ -103,7 +129,6 @@ function selectTower(evt) {
                         totalWin++
                         localStorage.setItem("winCounter", totalWin);
                          }
-
 
                     box1.removeEventListener('click', selectBox1);
                     box2.removeEventListener('click', selectBox2);
