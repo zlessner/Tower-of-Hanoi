@@ -8,6 +8,10 @@ let counter = document.querySelector('.counter')
 
 let winCounter= document.querySelector('.winCounter')
 
+let totalWinCounter= winCounter.innerHTML
+
+let totalWin = localStorage.getItem('winCounter');
+
 let restart = document.querySelector('.restart')
 
 let blockTower = document.querySelectorAll('.block')
@@ -19,12 +23,6 @@ let box2 = document.querySelector('.box2')
 let box3 = document.querySelector('.box3')
 
 let body = document.querySelector('body')
-
-let childrenBox1=Array.from(box1.children)
-
-let childrenBox2=Array.from(box2.children)
-
-let childrenBox3=Array.from(box3.children)
 
 restart.addEventListener("click", restartButton);
 function restartButton(evt) {
@@ -51,11 +49,12 @@ function selectTower(evt) {
                     let woof1=Array.from(box1.children)
                     if (!woof1.includes(blockTower[i])) {
                         woof1.unshift(blockTower[i])
-                        counter.innerHTML++
+                        
                     }
 
                     if((woof1.length<=1) || (woof1[0].offsetWidth<=woof1[1].offsetWidth)) {
-                    box1.prepend(blockTower[i])
+                        counter.innerHTML++
+                        box1.prepend(blockTower[i])
                     }
 
                     box1.removeEventListener('click', selectBox1);
@@ -70,12 +69,12 @@ function selectTower(evt) {
                     
                     let woof2=Array.from(box2.children)
                      if (!woof2.includes(blockTower[i])) {
-                        woof2.unshift(blockTower[i])
-                        counter.innerHTML++
+                        woof2.unshift(blockTower[i]) 
                     }
                   
                     if((woof2.length<=1) || (woof2[0].offsetWidth<=woof2[1].offsetWidth)) {
-                    box2.prepend(blockTower[i])
+                        counter.innerHTML++
+                        box2.prepend(blockTower[i])
                     }
 
                     box1.removeEventListener('click', selectBox1);
@@ -89,17 +88,21 @@ function selectTower(evt) {
                     
                     let woof3=Array.from(box3.children)
                     if (!woof3.includes(blockTower[i])) {
-                        woof3.unshift(blockTower[i])
-                        counter.innerHTML++
+                        woof3.unshift(blockTower[i])  
                     }
+
                     if((woof3.length<=1) || (woof3[0].offsetWidth<=woof3[1].offsetWidth)) {
-                    box3.prepend(blockTower[i])
+                        counter.innerHTML++
+                        box3.prepend(blockTower[i])
                     }
 
                     if (woof3.length==blockTower.length) {
-                        alert("We have a winner!")
-                        winCounter.innerHTML++
-                    }
+                        setTimeout(function() { alert("We have a winner!"); }, 300); 
+                        //winCounter.innerHTML++
+                        //localStorage.getItem('totalScore.innerHTML++');
+                        totalWin++
+                        localStorage.setItem("winCounter", totalWin);
+                         }
 
 
                     box1.removeEventListener('click', selectBox1);
