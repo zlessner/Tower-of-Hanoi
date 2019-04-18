@@ -75,13 +75,14 @@ function loadBlocks() {
 window.onload = loadBlocks() 
 
 
+
+
+
 let easyMode = document.querySelector('.easyMode')
 
 let hardMode = document.querySelector('.hardMode')
 
 let blockTower = document.querySelectorAll('.block')
-
-let bigBlock = document.querySelectorAll('.five')
 
 
     //if (numberBlocks.length==blockTower.length) {
@@ -104,10 +105,11 @@ let bigBlock = document.querySelectorAll('.five')
         //window.location.reload(false);
 
         box1.removeChild(box1.lastChild);
+        let newChildrenBox=Array.from(box1.children)
         //blockTower.pop();
         //console.log(blockTower)
         //console.log(blockTower.length)
-        if(bigBlock.innerHTML != ""){this.disabled = true}
+        if(newChildrenBox.length<blockTower.length){this.disabled = true}
     }
     
 
@@ -200,7 +202,6 @@ function selectTower(evt) {
 
                          console.log(woof3.length)
                          console.log(blockTower.length)
-                         console.log(bigBlock)
 
                     box1.removeEventListener('click', selectBox1);
                     box2.removeEventListener('click', selectBox2);
