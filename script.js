@@ -2,8 +2,6 @@
 
 //reset button keeping high score
 
-//add blocks
-
 
 let counter = document.querySelector('.counter')
 
@@ -21,14 +19,9 @@ let counter = document.querySelector('.counter')
 
 // document.querySelector('.winCounter').innerHTML = totalWin
 
-//document.getElementById("test").innerHTML = localStorage.getItem("name1");
-
 //let totalWinCounter= winCounter.innerHTML
 
 // localStorage.setItem('winCounter', totalWinCounter)
-
-//change to 1
-
 
 
 // console.log(totalWin)
@@ -40,13 +33,9 @@ let counter = document.querySelector('.counter')
 
 
 let box = document.querySelector('.box')
-
 let box1 = document.querySelector('.box1')
-
 let box2 = document.querySelector('.box2')
-
 let box3 = document.querySelector('.box3')
-
 let body = document.querySelector('body')
 
 
@@ -75,15 +64,11 @@ function loadBlocks() {
 window.onload = loadBlocks() 
 
 
-
 let easyMode = document.querySelector('.easyMode')
 
 let hardMode = document.querySelector('.hardMode')
 
 let blockTower =document.querySelectorAll('.block')
-
-
-    //if (numberBlocks.length==blockTower.length) {
 
 
         hardMode.addEventListener("click", restartButton);
@@ -93,13 +78,10 @@ let blockTower =document.querySelectorAll('.block')
             window.location.reload(false);
         }
 
-        //refresh and then run function
     easyMode.addEventListener("click", removeBlock);
     
     function removeBlock(evt) {
         evt.preventDefault();
-
-        //window.location.reload(false);
 
         node1.remove()
         node2.remove()
@@ -114,14 +96,8 @@ let blockTower =document.querySelectorAll('.block')
 
         newBlockTower = document.querySelectorAll('.block')
 
-        //blockTower.pop();
-        //console.log(blockTower)
-        //console.log(blockTower.length)
-
     }
     
-
-  //  }
 
 body.addEventListener("click", selectTower);
 function selectTower(evt) {
@@ -151,7 +127,6 @@ function selectTower(evt) {
                     if((woof1.length<=1) || (woof1[0].offsetWidth<=woof1[1].offsetWidth)) {
                         box1.prepend(newBlockTower[i])
                     }
-
                     box1.removeEventListener('click', selectBox1);
                     box2.removeEventListener('click', selectBox2);
                     box3.removeEventListener('click', selectBox3);
@@ -206,11 +181,6 @@ function selectTower(evt) {
                         //totalWin++
                         //localStorage.setItem("totalWin", totalWin);
                          }
-
-                         console.log(woof3.length)
-                         console.log(blockTower.length)
-                         let newChildrenBox3=Array.from(box3.children)
-                         console.log(newChildrenBox3)
 
                     box1.removeEventListener('click', selectBox1);
                     box2.removeEventListener('click', selectBox2);
