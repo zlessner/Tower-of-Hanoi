@@ -6,26 +6,6 @@
 
 let counter = document.querySelector('.counter')
 
-let tower1 = document.querySelector('.one')
-
-let tower2 = document.querySelector('.two')
-
-let tower3 = document.querySelector(".three")
-
-let tower4 = document.querySelector('.four')
-
-let tower5 = document.querySelector('.five')
-
-let tower1Wid= document.querySelector('.one').offsetWidth
-
-let tower2Wid= document.querySelector('.two').offsetWidth
-
-let tower3Wid= document.querySelector('.three').offsetWidth
-
-let tower4Wid= document.querySelector('.four').offsetWidth
-
-let tower5Wid= document.querySelector('.five').offsetWidth
-
 let blockTower = document.querySelectorAll('.block')
 
 let box1 = document.querySelector('.box1')
@@ -42,23 +22,17 @@ let childrenBox2=Array.from(box2.children)
 
 let childrenBox3=Array.from(box3.children)
 
-console.log(childrenBox1)
-
-console.log(box1.firstElementChild)
-
 
 body.addEventListener("click", selectTower);
 function selectTower(evt) {
     for (let i = 0; i < blockTower.length; i++) {
         evt.preventDefault();
 
-
             if (blockTower[i].contains(evt.target)) {
 
                 if ((blockTower[i]==box1.firstElementChild) || (blockTower[i]==box2.firstElementChild) || (blockTower[i]==box3.firstElementChild)) {
 
                 blockTower[i].style.border = "5px solid yellow";
-
 
                 box1.addEventListener("click", selectBox1);
                 function selectBox1(evt) {
@@ -89,19 +63,9 @@ function selectTower(evt) {
                         counter.innerHTML++
                     }
                   
-                    
                     if((woof2.length<=1) || (woof2[0].offsetWidth<=woof2[1].offsetWidth)) {
                     box2.prepend(blockTower[i])
                     }
-
-                    //console.log(woof2[i-1].offsetWidth)
-                    //console.log(woof2[0].offsetWidth)
-                    //console.log(woof2[1].offsetWidth)
-                    //console.log(blockTower[i].offsetWidth)
-                    //console.log(blockTower[0].offsetWidth)
-                    //console.log(blockTower[i+1].offsetWidth)
-                    //console.log(woof2[0].offsetWidth)
-                  
 
                     box1.removeEventListener('click', selectBox1);
                     box2.removeEventListener('click', selectBox2);
@@ -127,7 +91,6 @@ function selectTower(evt) {
                 }
             }
         }
-
             else {
                 blockTower[i].style.border = "2px solid black";
             }
