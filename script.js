@@ -1,35 +1,10 @@
 //simulation through lowest amount of moves scenario in addition to user playing game
 
-//reset button keeping high score
-
-
 let counter = document.querySelector('.counter')
 
-//let winCounter= document.querySelector('.winCounter').innerHTML
-// let totalWin=0
+let winCounter= document.querySelector('.winCounter')
 
-// if(!totalWin) {
-//     totalWin = 0
-// }
-// else {
-//     totalWin = parseInt(totalWin, 0)
-// }
-
-// let oink = localStorage.getItem('totalWin')
-
-// document.querySelector('.winCounter').innerHTML = totalWin
-
-//let totalWinCounter= winCounter.innerHTML
-
-// localStorage.setItem('winCounter', totalWinCounter)
-
-
-// console.log(totalWin)
-// console.log(typeof totalWin)
-// totalWin++
-// console.log(totalWin)
-
-// localStorage.setItem('winCounter', totalWin)
+let reset=0
 
 
 let box = document.querySelector('.box')
@@ -70,18 +45,31 @@ let hardMode = document.querySelector('.hardMode')
 
 let blockTower =document.querySelectorAll('.block')
 
+let blockArray=[node1,node2,node3,node4,node5]
+
 
         hardMode.addEventListener("click", restartButton);
         function restartButton(evt) {
-
             evt.preventDefault();
-            window.location.reload(false);
+            counter.innerHTML=reset
+            node1.remove()
+            node2.remove()
+            node3.remove()
+            node4.remove()
+            node5.remove()
+    
+            box1.appendChild(node1)
+            box1.appendChild(node2)
+            box1.appendChild(node3)
+            box1.appendChild(node4)
+            box1.appendChild(node5)
         }
 
     easyMode.addEventListener("click", removeBlock);
     
     function removeBlock(evt) {
         evt.preventDefault();
+        counter.innerHTML=reset
 
         node1.remove()
         node2.remove()
@@ -176,10 +164,7 @@ function selectTower(evt) {
 
                     if ((woof3.length==newBlockTower.length)) {
                         setTimeout(function() { alert("We have a winner!"); }, 300); 
-                        //winCounter.innerHTML++
-                        //localStorage.getItem('totalScore.innerHTML++');
-                        //totalWin++
-                        //localStorage.setItem("totalWin", totalWin);
+                        winCounter.innerHTML++
                          }
 
                     box1.removeEventListener('click', selectBox1);
