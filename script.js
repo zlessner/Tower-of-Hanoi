@@ -1,10 +1,14 @@
 //simulation through lowest amount of moves scenario in addition to user playing game
 
-//create three different arrays with winning array having correct order and pieces
+//reset button keeping high score
 
-//reset button
+//add blocks
 
 let counter = document.querySelector('.counter')
+
+let winCounter= document.querySelector('.winCounter')
+
+let restart = document.querySelector('.restart')
 
 let blockTower = document.querySelectorAll('.block')
 
@@ -21,6 +25,13 @@ let childrenBox1=Array.from(box1.children)
 let childrenBox2=Array.from(box2.children)
 
 let childrenBox3=Array.from(box3.children)
+
+restart.addEventListener("click", restartButton);
+function restartButton(evt) {
+
+    evt.preventDefault();
+    window.location.reload(false);
+    }
 
 
 body.addEventListener("click", selectTower);
@@ -85,6 +96,12 @@ function selectTower(evt) {
                     box3.prepend(blockTower[i])
                     }
 
+                    if (woof3.length==blockTower.length) {
+                        alert("We have a winner!")
+                        winCounter.innerHTML++
+                    }
+
+
                     box1.removeEventListener('click', selectBox1);
                     box2.removeEventListener('click', selectBox2);
                     box3.removeEventListener('click', selectBox3);
@@ -94,7 +111,6 @@ function selectTower(evt) {
             else {
                 blockTower[i].style.border = "2px solid black";
             }
-    
-}
+    }
 }
 
