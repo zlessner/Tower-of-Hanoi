@@ -12,8 +12,6 @@ let totalWinCounter= winCounter.innerHTML
 
 let totalWin = localStorage.getItem('winCounter');
 
-let restart = document.querySelector('.restart')
-
 let easyMode = document.querySelector('.easyMode')
 
 let hardMode = document.querySelector('.hardMode')
@@ -21,6 +19,8 @@ let hardMode = document.querySelector('.hardMode')
 let blockTower = document.querySelectorAll('.block')
 
 let bigBlock = document.querySelectorAll('.five')
+
+let box = document.querySelector('.box')
 
 let box1 = document.querySelector('.box1')
 
@@ -30,32 +30,22 @@ let box3 = document.querySelector('.box3')
 
 let body = document.querySelector('body')
 
-let numberBoxes=Array.from(box1.children)
-
-console.log(numberBoxes.length)
-
-console.log(blockTower.length)
+let numberBlocks=Array.from(box.children)
 
 
-restart.addEventListener("click", restartButton);
-function restartButton(evt) {
 
-    evt.preventDefault();
-    window.location.reload(false);
-    }
-
-
-    if (numberBoxes.length==blockTower.length) {
+    if (numberBlocks.length==blockTower.length) {
 
     easyMode.addEventListener("click", removeBlock);
     function removeBlock(evt) {
     
         evt.preventDefault();
-        console.log(box1.lastChild)
+        console.log(box.lastChild)
 
         box1.removeChild(box1.lastChild);
         //not sure why I need two of these for the button to function normally
         box1.removeChild(box1.lastChild);
+        if(bigBlock.innerHTML != ""){this.disabled = true}
         }
 
         hardMode.addEventListener("click", restartButton);
@@ -129,7 +119,6 @@ function selectTower(evt) {
                 box3.addEventListener("click", selectBox3);
                 function selectBox3(evt) {
                     evt.preventDefault();
-                    
                     let woof3=Array.from(box3.children)
                     if (!woof3.includes(blockTower[i])) {
 
@@ -151,6 +140,10 @@ function selectTower(evt) {
                         totalWin++
                         localStorage.setItem("winCounter", totalWin);
                          }
+
+                         console.log(woof3.length)
+                         console.log(blockTower.length)
+                         console.log(numberBlocks.length)
 
                     box1.removeEventListener('click', selectBox1);
                     box2.removeEventListener('click', selectBox2);
