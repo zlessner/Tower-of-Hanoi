@@ -16,7 +16,11 @@ let restart = document.querySelector('.restart')
 
 let easyMode = document.querySelector('.easyMode')
 
+let hardMode = document.querySelector('.hardMode')
+
 let blockTower = document.querySelectorAll('.block')
+
+let bigBlock = document.querySelectorAll('.five')
 
 let box1 = document.querySelector('.box1')
 
@@ -25,6 +29,12 @@ let box2 = document.querySelector('.box2')
 let box3 = document.querySelector('.box3')
 
 let body = document.querySelector('body')
+
+let numberBoxes=Array.from(box1.children)
+
+console.log(numberBoxes.length)
+
+console.log(blockTower.length)
 
 
 restart.addEventListener("click", restartButton);
@@ -35,14 +45,26 @@ function restartButton(evt) {
     }
 
 
+    if (numberBoxes.length==blockTower.length) {
+
     easyMode.addEventListener("click", removeBlock);
     function removeBlock(evt) {
     
         evt.preventDefault();
+        console.log(box1.lastChild)
 
+        box1.removeChild(box1.lastChild);
+        //not sure why I need two of these for the button to function normally
         box1.removeChild(box1.lastChild);
         }
 
+        hardMode.addEventListener("click", restartButton);
+        function restartButton(evt) {
+
+            evt.preventDefault();
+            window.location.reload(false);
+        }
+    }
 
 
 body.addEventListener("click", selectTower);
