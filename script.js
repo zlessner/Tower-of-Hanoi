@@ -30,6 +30,7 @@ let blockArray=[node1,node2,node3,node4,node5]
 
 
 function loadBlocks() {
+//look out for what -2 does
 
         for (let i=0; i<blockArray.length; i++) {
             box1.appendChild(blockArray[i])
@@ -43,6 +44,8 @@ window.onload = loadBlocks()
 
 
 let easyMode = document.querySelector('.easyMode')
+
+let mediumMode = document.querySelector('.mediumMode')
 
 let hardMode = document.querySelector('.hardMode')
 
@@ -67,6 +70,24 @@ let blockTower =document.querySelectorAll('.block')
 
         }
 
+        mediumMode.addEventListener("click", middle);
+        function middle(evt) {
+            evt.preventDefault();
+            counter.innerHTML=reset
+            
+            for(let i=0; i<blockArray.length; i++) {
+
+                blockArray[i].remove()
+            }
+
+            for(let j=0; j<blockArray.length-1; j++) {
+
+                box1.appendChild(blockArray[j]) }
+
+                newBlockTower = document.querySelectorAll('.block')
+
+        }
+
     easyMode.addEventListener("click", removeBlock);
     
     function removeBlock(evt) {
@@ -78,13 +99,14 @@ let blockTower =document.querySelectorAll('.block')
             blockArray[i].remove()
         }
 
-        for(let j=0; j<blockArray.length-1; j++) {
+        for(let j=0; j<blockArray.length-2; j++) {
 
             box1.appendChild(blockArray[j]) }
 
         newBlockTower = document.querySelectorAll('.block')
 
     }
+
     
 
 body.addEventListener("click", selectTower);
