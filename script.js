@@ -175,7 +175,7 @@ function selectTower(evt) {
                         box3.prepend(newBlockTower[i])
                     }
 
-                    if ((woof3.length==newBlockTower.length)) {
+                    if ((woof3.length==newBlockTower.length) && (woof3[0].offsetWidth<=woof3[1].offsetWidth)) {
                         setTimeout(function() { alert("We have a winner!"); }, 300); 
                         winCounter.innerHTML++
                          }
