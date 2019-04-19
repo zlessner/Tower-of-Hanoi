@@ -14,6 +14,7 @@ let box3 = document.querySelector('.box3')
 let body = document.querySelector('body')
 
 
+
 var node1 = document.createElement("block1"); 
 node1.className = 'one block'; 
 var node2 = document.createElement("block2"); 
@@ -25,8 +26,8 @@ node4.className = 'four block';
 var node5 = document.createElement("block5"); 
 node5.className = 'five block'; 
 
-
 let blockArray=[node1,node2,node3,node4,node5]
+
 
 function loadBlocks() {
 
@@ -128,7 +129,7 @@ function selectTower(evt) {
                     let woof2=Array.from(box2.children)
                      if (!woof2.includes(newBlockTower[i])) {
 
-                        if(evt.target== evt.currentTarget)  { 
+                        if((evt.target== evt.currentTarget)|| evt.target== newBlockTower[i-1])  { 
 
                             woof2.unshift(newBlockTower[i]) 
 
@@ -140,11 +141,12 @@ function selectTower(evt) {
                        
                         box2.prepend(newBlockTower[i])
                     }
-
+                    console.log(newBlockTower[i-1])
                     box1.removeEventListener('click', selectBox1);
                     box2.removeEventListener('click', selectBox2);
                     box3.removeEventListener('click', selectBox3);
                 }
+                
 
                 box3.addEventListener("click", selectBox3);
                 function selectBox3(evt) {
