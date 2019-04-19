@@ -115,6 +115,7 @@ function selectTower(evt) {
                     box1.removeEventListener('click', selectBox1);
                     box2.removeEventListener('click', selectBox2);
                     box3.removeEventListener('click', selectBox3);
+                    
 
                 }
                 box2.addEventListener("click", selectBox2);
@@ -133,11 +134,6 @@ function selectTower(evt) {
                        
                         box2.prepend(newBlockTower[i])
                     }
-                    console.log(woof2.length)
-                    console.log(woof2)
-                    console.log(evt.currentTarget)
-                    console.log(evt.target)
-
                     box1.removeEventListener('click', selectBox1);
                     box2.removeEventListener('click', selectBox2);
                     box3.removeEventListener('click', selectBox3);
