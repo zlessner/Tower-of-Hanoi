@@ -129,7 +129,7 @@ function selectTower(evt) {
                     let woof2=Array.from(box2.children)
                      if (!woof2.includes(newBlockTower[i])) {
 
-                        if((evt.target== evt.currentTarget)|| evt.target== newBlockTower[i-1])  { 
+                        if((evt.target== evt.currentTarget)|| woof2.length<=1)  { 
 
                             woof2.unshift(newBlockTower[i]) 
 
