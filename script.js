@@ -30,14 +30,11 @@ let blockArray=[node1,node2,node3,node4,node5]
 
 
 function loadBlocks() {
-//look out for what -2 does
-
-        for (let i=0; i<blockArray.length; i++) {
-            box1.appendChild(blockArray[i])
+newBlockTower=[]
+        for (let i=0; i<blockArray.length-2; i++) {
+            startPage=box1.appendChild(blockArray[i])
+            newBlockTower.push(startPage)
         }
-    
-        newBlockTower = document.querySelectorAll('.block')
- 
 }
 
 window.onload = loadBlocks() 
@@ -189,7 +186,7 @@ function selectTower(evt) {
             }
         }
             else {
-                blockTower[i].style.border = "2px solid black";
+                newBlockTower[i].style.border = "2px solid black";
             }
     }
 }
