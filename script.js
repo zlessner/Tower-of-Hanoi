@@ -25,13 +25,15 @@ node4.className = 'four block';
 var node5 = document.createElement("block5"); 
 node5.className = 'five block'; 
 
+
+let blockArray=[node1,node2,node3,node4,node5]
+
 function loadBlocks() {
+
+        for (let i=0; i<blockArray.length; i++) {
+            box1.appendChild(blockArray[i])
+        }
     
-        box1.appendChild(node1)
-        box1.appendChild(node2)
-        box1.appendChild(node3)
-        box1.appendChild(node4)
-        box1.appendChild(node5)
         newBlockTower = document.querySelectorAll('.block')
  
 }
@@ -45,8 +47,6 @@ let hardMode = document.querySelector('.hardMode')
 
 let blockTower =document.querySelectorAll('.block')
 
-let blockArray=[node1,node2,node3,node4,node5]
-
 
         hardMode.addEventListener("click", restartButton);
         function restartButton(evt) {
@@ -57,12 +57,12 @@ let blockArray=[node1,node2,node3,node4,node5]
 
                 blockArray[i].remove()
             }
-    
-            box1.appendChild(node1)
-            box1.appendChild(node2)
-            box1.appendChild(node3)
-            box1.appendChild(node4)
-            box1.appendChild(node5)
+
+            for(let j=0; j<blockArray.length; j++) {
+
+                box1.appendChild(blockArray[j])
+            }
+
         }
 
     easyMode.addEventListener("click", removeBlock);
@@ -76,10 +76,9 @@ let blockArray=[node1,node2,node3,node4,node5]
             blockArray[i].remove()
         }
 
-        box1.appendChild(node1)
-        box1.appendChild(node2)
-        box1.appendChild(node3)
-        box1.appendChild(node4)
+        for(let j=0; j<blockArray.length-1; j++) {
+
+            box1.appendChild(blockArray[j]) }
 
         newBlockTower = document.querySelectorAll('.block')
 
@@ -103,7 +102,7 @@ function selectTower(evt) {
                     let woof1=Array.from(box1.children)
                     if (!woof1.includes(newBlockTower[i])) {
 
-                        if((evt.target== evt.currentTarget) && (!woof1.includes(newBlockTower[i-1])))  { 
+                        if((evt.target== evt.currentTarget) && (woof1[0].offsetWidth<=woof1[1].offsetWidth))  { 
                             counter.innerHTML++ 
                         }
 
@@ -127,7 +126,7 @@ function selectTower(evt) {
                     let woof2=Array.from(box2.children)
                      if (!woof2.includes(newBlockTower[i])) {
 
-                        if((evt.target== evt.currentTarget) && (!woof2.includes(newBlockTower[i-1])))  { 
+                        if((evt.target== evt.currentTarget) && (woof2[0].offsetWidth<=woof2[1].offsetWidth))  { 
                         counter.innerHTML++ 
                         } 
 
