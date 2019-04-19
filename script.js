@@ -31,10 +31,11 @@ let blockArray=[node1,node2,node3,node4,node5]
 
 function loadBlocks() {
 newBlockTower=[]
-        for (let i=0; i<blockArray.length-2; i++) {
-            startPage=box1.appendChild(blockArray[i])
-            newBlockTower.push(startPage)
-        }
+     //to start with blocks use code below   
+//for (let i=0; i<blockArray.length-2; i++) {
+            //startPage=box1.appendChild(blockArray[i])
+           // newBlockTower.push(startPage)
+        //}
 }
 
 window.onload = loadBlocks() 
