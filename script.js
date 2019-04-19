@@ -108,10 +108,7 @@ function selectTower(evt) {
                             woof1.unshift(newBlockTower[i]) 
 
                             if(((woof1.length==0) || (woof1.length==1)) || (woof1[0].offsetWidth<=woof1[1].offsetWidth)) 
-                        counter.innerHTML++ }
-
-
-                        
+                        counter.innerHTML++ }          
                     }
 
                     if((woof1.length<=1) || ((woof1[0].offsetWidth<=woof1[1].offsetWidth) || (woof1[1]==false))) {
@@ -136,8 +133,6 @@ function selectTower(evt) {
 
                             if(((woof2.length==0) || (woof2.length==1)) || (woof2[0].offsetWidth<=woof2[1].offsetWidth)) 
                         counter.innerHTML++ }
-                         
-
                     }
                   
                     if((woof2.length<=1) || ((woof2[0].offsetWidth<=woof2[1].offsetWidth) || (woof2[0]==false))) {
@@ -161,8 +156,7 @@ function selectTower(evt) {
                             woof3.unshift(newBlockTower[i]) 
 
                             if(((woof3.length==0) || (woof3.length==1)) || (woof3[0].offsetWidth<=woof3[1].offsetWidth)) 
-                        counter.innerHTML++ }
-                         
+                        counter.innerHTML++ }         
                     }
 
                     if((woof3.length<=1) || (woof3[0].offsetWidth<=woof3[1].offsetWidth)) {
