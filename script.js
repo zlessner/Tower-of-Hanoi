@@ -104,14 +104,10 @@ function selectTower(evt) {
                     let woof1=Array.from(box1.children)
                     if (!woof1.includes(newBlockTower[i])) {
 
-                      
-                        if(evt.target== evt.currentTarget)  { 
-
                             woof1.unshift(newBlockTower[i]) 
 
                             if(((woof1.length==0) || (woof1.length==1)) || (woof1[0].offsetWidth<=woof1[1].offsetWidth)) 
                         counter.innerHTML++ }          
-                    }
 
                     if((woof1.length<=1) || ((woof1[0].offsetWidth<=woof1[1].offsetWidth) || (woof1[1]==false))) {
                         box1.prepend(newBlockTower[i])
@@ -121,7 +117,6 @@ function selectTower(evt) {
                     box3.removeEventListener('click', selectBox3);
 
                 }
-
                 box2.addEventListener("click", selectBox2);
                 function selectBox2(evt) {
                     evt.preventDefault();
@@ -129,19 +124,20 @@ function selectTower(evt) {
                     let woof2=Array.from(box2.children)
                      if (!woof2.includes(newBlockTower[i])) {
 
-                        if((evt.target== evt.currentTarget)|| woof2.length<=1)  { 
-
                             woof2.unshift(newBlockTower[i]) 
 
                             if(((woof2.length==0) || (woof2.length==1)) || (woof2[0].offsetWidth<=woof2[1].offsetWidth)) 
                         counter.innerHTML++ }
-                    }
                   
                     if((woof2.length<=1) || ((woof2[0].offsetWidth<=woof2[1].offsetWidth) || (woof2[0]==false))) {
                        
                         box2.prepend(newBlockTower[i])
                     }
-                    console.log(newBlockTower[i-1])
+                    console.log(woof2.length)
+                    console.log(woof2)
+                    console.log(evt.currentTarget)
+                    console.log(evt.target)
+
                     box1.removeEventListener('click', selectBox1);
                     box2.removeEventListener('click', selectBox2);
                     box3.removeEventListener('click', selectBox3);
@@ -154,13 +150,10 @@ function selectTower(evt) {
                     let woof3=Array.from(box3.children)
                     if (!woof3.includes(newBlockTower[i])) {
 
-                        if(evt.target== evt.currentTarget)  { 
-
                             woof3.unshift(newBlockTower[i]) 
 
                             if(((woof3.length==0) || (woof3.length==1)) || (woof3[0].offsetWidth<=woof3[1].offsetWidth)) 
                         counter.innerHTML++ }         
-                    }
 
                     if((woof3.length<=1) || (woof3[0].offsetWidth<=woof3[1].offsetWidth)) {
                         box3.prepend(newBlockTower[i])
