@@ -102,15 +102,19 @@ function selectTower(evt) {
                     let woof1=Array.from(box1.children)
                     if (!woof1.includes(newBlockTower[i])) {
 
-                        if((evt.target== evt.currentTarget) && (woof1[0].offsetWidth<=woof1[1].offsetWidth))  { 
-                            counter.innerHTML++ 
-                        }
+                      
+                        if(evt.target== evt.currentTarget)  { 
 
-                        woof1.unshift(newBlockTower[i])
+                            woof1.unshift(newBlockTower[i]) 
+
+                            if(((woof1.length==0) || (woof1.length==1)) || (woof1[0].offsetWidth<=woof1[1].offsetWidth)) 
+                        counter.innerHTML++ }
+
+
                         
                     }
 
-                    if((woof1.length<=1) || (woof1[0].offsetWidth<=woof1[1].offsetWidth)) {
+                    if((woof1.length<=1) || ((woof1[0].offsetWidth<=woof1[1].offsetWidth) || (woof1[1]==false))) {
                         box1.prepend(newBlockTower[i])
                     }
                     box1.removeEventListener('click', selectBox1);
@@ -126,14 +130,17 @@ function selectTower(evt) {
                     let woof2=Array.from(box2.children)
                      if (!woof2.includes(newBlockTower[i])) {
 
-                        if((evt.target== evt.currentTarget) && (woof2[0].offsetWidth<=woof2[1].offsetWidth))  { 
-                        counter.innerHTML++ 
-                        } 
+                        if(evt.target== evt.currentTarget)  { 
 
-                        woof2.unshift(newBlockTower[i]) 
+                            woof2.unshift(newBlockTower[i]) 
+
+                            if(((woof2.length==0) || (woof2.length==1)) || (woof2[0].offsetWidth<=woof2[1].offsetWidth)) 
+                        counter.innerHTML++ }
+                         
+
                     }
                   
-                    if((woof2.length<=1) || (woof2[0].offsetWidth<=woof2[1].offsetWidth)) {
+                    if((woof2.length<=1) || ((woof2[0].offsetWidth<=woof2[1].offsetWidth) || (woof2[0]==false))) {
                        
                         box2.prepend(newBlockTower[i])
                     }
@@ -149,11 +156,13 @@ function selectTower(evt) {
                     let woof3=Array.from(box3.children)
                     if (!woof3.includes(newBlockTower[i])) {
 
-                        if((evt.target== evt.currentTarget) && (!woof3.includes(newBlockTower[i-1])))  { 
-                        counter.innerHTML++ }
-                            
+                        if(evt.target== evt.currentTarget)  { 
 
-                        woof3.unshift(newBlockTower[i])  
+                            woof3.unshift(newBlockTower[i]) 
+
+                            if(((woof3.length==0) || (woof3.length==1)) || (woof3[0].offsetWidth<=woof3[1].offsetWidth)) 
+                        counter.innerHTML++ }
+                         
                     }
 
                     if((woof3.length<=1) || (woof3[0].offsetWidth<=woof3[1].offsetWidth)) {
