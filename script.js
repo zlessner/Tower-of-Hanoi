@@ -60,8 +60,9 @@ let blockTower =document.querySelectorAll('.block')
 
             for(let j=0; j<blockArray.length; j++) {
 
-                box1.appendChild(blockArray[j])
-            }
+                box1.appendChild(blockArray[j]) }
+
+                newBlockTower = document.querySelectorAll('.block')
 
         }
 
