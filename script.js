@@ -6,13 +6,11 @@ let winCounter= document.querySelector('.winCounter')
 
 let reset=0
 
-
 let box = document.querySelector('.box')
 let box1 = document.querySelector('.box1')
 let box2 = document.querySelector('.box2')
 let box3 = document.querySelector('.box3')
 let body = document.querySelector('body')
-
 
 
 var node1 = document.createElement("block1"); 
@@ -50,63 +48,53 @@ let hardMode = document.querySelector('.hardMode')
 let blockTower =document.querySelectorAll('.block')
 
 
-        hardMode.addEventListener("click", restartButton);
-        function restartButton(evt) {
-            evt.preventDefault();
+        hardMode.addEventListener("click", function() {
+            restartButton('hard') });
+
+        mediumMode.addEventListener("click", function() {
+            restartButton('medium') });
+
+        easyMode.addEventListener("click", function() {
+            restartButton('easy') });
+
+
+        function restartButton(x) {
             counter.innerHTML=reset
-            
+ 
             for(let i=0; i<blockArray.length; i++) {
 
                 blockArray[i].remove()
             }
+
+            if (x=='hard') {
 
             for(let j=0; j<blockArray.length; j++) {
 
-                box1.appendChild(blockArray[j]) }
-
-                newBlockTower = document.querySelectorAll('.block')
-
+                box1.appendChild(blockArray[j]) 
+            }
         }
 
-        mediumMode.addEventListener("click", middle);
-        function middle(evt) {
-            evt.preventDefault();
-            counter.innerHTML=reset
-            
-            for(let i=0; i<blockArray.length; i++) {
-
-                blockArray[i].remove()
-            }
+        if (x=='medium') {
 
             for(let j=0; j<blockArray.length-1; j++) {
 
-                box1.appendChild(blockArray[j]) }
+                box1.appendChild(blockArray[j]) 
+            }
+        }
+
+        if (x=='easy') {
+
+            for(let j=0; j<blockArray.length-2; j++) {
+
+                box1.appendChild(blockArray[j]) 
+            }
+        }
 
                 newBlockTower = document.querySelectorAll('.block')
-
         }
 
-    easyMode.addEventListener("click", removeBlock);
     
-    function removeBlock(evt) {
-        evt.preventDefault();
-        counter.innerHTML=reset
-
-        for(let i=0; i<blockArray.length; i++) {
-
-            blockArray[i].remove()
-        }
-
-        for(let j=0; j<blockArray.length-2; j++) {
-
-            box1.appendChild(blockArray[j]) }
-
-        newBlockTower = document.querySelectorAll('.block')
-
-    }
-
-    
-
+//newBlockTower.eventlistener
 body.addEventListener("click", selectTower);
 function selectTower(evt) {
     for (let i = 0; i < newBlockTower.length; i++) {
@@ -191,4 +179,3 @@ function selectTower(evt) {
             }
     }
 }
-
