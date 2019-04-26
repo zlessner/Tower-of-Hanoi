@@ -64,6 +64,7 @@ let blockTower =document.querySelectorAll('.block')
             for(let i=0; i<blockArray.length; i++) {
 
                 blockArray[i].remove()
+  
             }
 
             if (x=='hard') {
@@ -93,6 +94,83 @@ let blockTower =document.querySelectorAll('.block')
                 newBlockTower = document.querySelectorAll('.block')
         }
 
+
+
+//         //newBlockTower.eventlistener
+// body.addEventListener("click", selectTower);
+// function selectTower(evt) {
+//     for (let i = 0; i < newBlockTower.length; i++) {
+//         evt.preventDefault();
+        
+//             if (newBlockTower[i].contains(evt.target)) {
+
+//                 if ((newBlockTower[i]==box1.firstElementChild) || (newBlockTower[i]==box2.firstElementChild) || (newBlockTower[i]==box3.firstElementChild)) {
+
+//                 newBlockTower[i].style.border = "5px solid yellow";
+
+
+//         box1.addEventListener("click", function() {
+//             selectBox('selectBox1') });
+
+//         box2.addEventListener("click", function() {
+//             selectBox('selectBox2') });
+
+//         box3.addEventListener("click", function() {
+//             selectBox('selectBox3') });
+
+
+//         function selectBox(y) {
+//             let woof1=Array.from(box1.children)
+//             let woof2=Array.from(box2.children)
+//             let woof3=Array.from(box3.children)
+
+//             if (y=='selectBox1') {
+//                 woof=woof1
+//                 whichBox=box1
+//             }
+
+//             if (y=='selectBox2') {
+//                 woof=woof2
+//                 whichBox=box2
+//             }
+
+//              if (y=='selectBox3') {
+//                 woof=woof3
+//                 whichBox=box3
+//             }
+
+//             console.log(whichBox)
+//             console.log(woof)
+
+//             if (!woof.includes(newBlockTower[i])) {
+
+//                 woof.unshift(newBlockTower[i]) 
+
+//                 if(((woof.length==0) || (woof.length==1)) || (woof[0].offsetWidth<=woof[1].offsetWidth)) 
+//             counter.innerHTML++ }          
+
+//         if((woof.length<=1) || ((woof[0].offsetWidth<=woof[1].offsetWidth) || (woof[1]==false))) {
+//             whichBox.prepend(newBlockTower[i])
+//             return;
+
+//         }
+
+//     box1.removeEventListener('click', selectBox);
+//     box2.removeEventListener('click', selectBox);
+//     box3.removeEventListener('click', selectBox);
+
+
+//     }}
+
+  
+//     }
+//     else {
+//         newBlockTower[i].style.border = "2px solid black";
+//     }}
+// }
+
+
+
     
 //newBlockTower.eventlistener
 body.addEventListener("click", selectTower);
@@ -107,8 +185,10 @@ function selectTower(evt) {
                 newBlockTower[i].style.border = "5px solid yellow";
 
                 box1.addEventListener("click", selectBox1);
-                function selectBox1(evt) {
-                    evt.preventDefault();
+                function selectBox1() {
+                    box1.removeEventListener('click', selectBox1);
+                    box2.removeEventListener('click', selectBox2);
+                    box3.removeEventListener('click', selectBox3);
                     let woof1=Array.from(box1.children)
                     if (!woof1.includes(newBlockTower[i])) {
 
@@ -120,15 +200,15 @@ function selectTower(evt) {
                     if((woof1.length<=1) || ((woof1[0].offsetWidth<=woof1[1].offsetWidth) || (woof1[1]==false))) {
                         box1.prepend(newBlockTower[i])
                     }
-                    box1.removeEventListener('click', selectBox1);
-                    box2.removeEventListener('click', selectBox2);
-                    box3.removeEventListener('click', selectBox3);
+
                     
 
                 }
                 box2.addEventListener("click", selectBox2);
-                function selectBox2(evt) {
-                    evt.preventDefault();
+                function selectBox2() {
+                    box1.removeEventListener('click', selectBox1);
+                    box2.removeEventListener('click', selectBox2);
+                    box3.removeEventListener('click', selectBox3);
                     
                     let woof2=Array.from(box2.children)
                      if (!woof2.includes(newBlockTower[i])) {
@@ -142,15 +222,15 @@ function selectTower(evt) {
                        
                         box2.prepend(newBlockTower[i])
                     }
-                    box1.removeEventListener('click', selectBox1);
-                    box2.removeEventListener('click', selectBox2);
-                    box3.removeEventListener('click', selectBox3);
+
                 }
                 
 
                 box3.addEventListener("click", selectBox3);
-                function selectBox3(evt) {
-                    evt.preventDefault();
+                function selectBox3() {
+                    box1.removeEventListener('click', selectBox1);
+                    box2.removeEventListener('click', selectBox2);
+                    box3.removeEventListener('click', selectBox3);
                     let woof3=Array.from(box3.children)
                     if (!woof3.includes(newBlockTower[i])) {
 
@@ -168,9 +248,7 @@ function selectTower(evt) {
                         winCounter.innerHTML++
                          }
 
-                    box1.removeEventListener('click', selectBox1);
-                    box2.removeEventListener('click', selectBox2);
-                    box3.removeEventListener('click', selectBox3);
+
                 }
             }
         }
