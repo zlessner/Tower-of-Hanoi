@@ -4,6 +4,10 @@ body {
     font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
+.headline {
+    text-shadow: 0 0 2px tan;
+}
+
 h4, .rules {
     text-align: left;
 }
